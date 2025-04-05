@@ -1,0 +1,522 @@
+/* 🎨 Variables de color para fácil modificación */
+:root {
+    --primary-color: #70c770;
+    --secondary-color: #a2d59c;
+    --dark-bg: #333;
+    --darker-bg: #3d3d3d;
+    --gray-bg: #444;
+    --text-light: white;
+    --text-dark: black;
+}
+
+/* 🌍 Configuración global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* 🔲 Encabezado */
+header {
+    background-color: #c4e5a2; /* Color de fondo */
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔳 Estilo del Logo */
+.logo {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto;
+    margin-right: 10px; /* Empuja la navegación al centro */
+}
+
+/* 🔗 Navegación */
+nav {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    display: flex;
+    margin-left: 500px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Texto oscuro */
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #a0d468;
+    color: white;
+}
+
+
+
+/* 🎬 Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-light);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* 🎯 Botones en Hero */
+.hero .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hero button {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #8cbe82;
+}
+
+/* 🛠 Servicios */
+#services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--gray-bg);
+}
+
+#services h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#services p {
+    font-size: 1.2em;
+    margin-bottom: 60px;
+}
+
+/* 📦 Grid de servicios */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* 🃏 Tarjetas */
+.card {
+    background-color: #70c770;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    background-color: var(--primary-color);
+    padding: 15px;
+    color: var(--text-dark);
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.card-content p {
+    font-size: 0.9em;
+}
+
+/* ⭐ Sección de características */
+#features {
+    background-color: var(--darker-bg);
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-light);
+}
+
+#features h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#features p {
+    font-size: 1rem;
+    margin-bottom: 60px;
+}
+
+/* 📌 Grid de características */
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 🎴 Tarjetas de características */
+.feature-card {
+    background: var(--primary-color);
+    color: var(--text-dark);
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.feature-content {
+    background-color: var(--primary-color);
+    padding: 15px;
+    color: var(--text-dark);
+}
+
+.feature-content h3 {
+    margin: 10px 0;
+    font-size: 1.4em;
+}
+
+.feature-content p {
+    font-size: 1.2rem;
+}
+
+/* Estilos de la sección Pricing */
+#pricing {
+    background-color: #444;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#pricing h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de las tarjetas */
+.pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+}
+
+/* Tarjetas */
+.pricing-card {
+    background-color: #70c770;
+    color: black;
+    border-radius: 15px;
+    padding: 30px;
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.pricing-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+    margin-top: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Lista de beneficios */
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.pricing-card ul li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Efecto 3D en los precios */
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 
+                 -1px -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Botones */
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 100px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+/* Resaltar ENTERPRISE */
+.highlight {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-btn {
+    background-color: black;
+    color: white;
+}
+
+.dark-btn:hover {
+    background-color: #333;
+}
+
+/* CONTACT SECTION */
+#contact {
+    background-color: #3d3d3d;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+#contact h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+}
+
+.contact-card img {
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.contact-card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-form {
+    background: #70c770;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+
+.contact-form h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: auto;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #57a773;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #57a773;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #3e8b5e;
+    transform: scale(1.05);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #c4e5a2;
+    padding: 20px 40px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-left p a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-center {
+    text-align: center;
+    color: #000000;
+}
+
+.footer-center img {
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right .social,
+.footer-right .email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.footer-right img {
+    width: 20px;
+    height: 20px;
+}
