@@ -126,6 +126,10 @@ nav a:hover {
     background-color: #8cbe82;
 }
 
+.hero .buttons a {
+    text-decoration: none;
+}
+
 /* 🛠 Servicios */
 #services {
     text-align: center;
@@ -322,6 +326,15 @@ nav a:hover {
     margin-bottom: 5px;
     font-size: 0.9rem;
     text-align: left;
+}
+
+.pricing-card a {
+    text-decoration: none;
+    display: block;
+}
+
+.pricing-card button {
+    width: 100%;
 }
 
 /* Efecto 3D en los precios */
