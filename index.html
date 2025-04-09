@@ -27,7 +27,7 @@
             <h2>OPTIMIZE YOUR TRANSPORTATION</h2>
             <p>Real-time GPS tracking | Smarter route planning | Reliable and on-time transportation</p>
             <div class="buttons">
-                <a href="#contact"><button>Get Started</button></a>
+                <button>Get Started</button>
                 <button>Play Game</button>
             </div>
         </div>
@@ -122,7 +122,7 @@
                     <li>✔ Full app</li>
                     <li>✔ Analytics</li>
                 </ul>
-                <a href="#contact"><button>Get Started</button></a>
+                <button>Get Started</button>
             </div>
             <div class="pricing-card">
                 <h4>PRO</h4>
@@ -132,7 +132,7 @@
                     <li>✔ Full app</li>
                     <li>✔ Analytics</li>
                 </ul>
-                <a href="#contact"><button>Get Started</button></a>
+                <button>Get Started</button>
             </div>
             <div class="pricing-card highlight">
                 <h4>ENTERPRISE</h4>
@@ -143,7 +143,7 @@
                     <li>✔ Analytics</li>
                     <li>✔ Service 24/7</li>
                 </ul>
-                <a href="#contact"><button class="dark-btn">Get Started</button></a>
+                <button class="dark-btn">Get Started</button>
             </div>
             <div class="pricing-card">
                 <h4>CUSTOMIZED</h4>
@@ -155,7 +155,7 @@
                     <li>✔ Service 24/7</li>
                     <li>✔ Integrated AI</li>
                 </ul>
-                <a href="#contact"><button>Get Started</button></a>
+                <button>Get Started</button>
             </div>
         </div>
     </section>
@@ -170,34 +170,54 @@
                 <p>"Your route, your time, your safety"</p>
             </div>
             <div class="contact-form-container">
-                <form 
-                    class="contact-form"
-                    action="https://protonmail.us15.list-manage.com/subscribe/post?u=53279532fecb3696c2f343de6&amp;id=26d9b78fbc&amp;f_id=0018a8e0f0" 
-                    method="post" 
-                    id="mc-embedded-subscribe-form" 
-                    name="mc-embedded-subscribe-form" 
-                    class="validate" 
-                    target="_blank">
+                <form class="contact-form" action="https://formspree.io/f/mwplakwk" method="POST">
                     <h3>GET IN TOUCH</h3>
 
-                    <label for="mce-FNAME">Name</label>
-                    <input type="text" id="mce-FNAME" name="FNAME" placeholder="Full Name" required>
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required minlength="2">
+                    <span class="field-error" id="nameError">Name must be at least 2 characters long</span>
                     
-                    <label for="mce-EMAIL">Email</label>
-                    <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="Email@example.com" required>
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Email@example.com" required>
+                    <span class="field-error" id="emailError">Please enter a valid email address</span>
                     
-                    <label for="mce-PHONE">Phone Number</label>
-                    <input type="tel" id="mce-PHONE" name="PHONE" placeholder="(###) ### - ####">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" pattern="[\d\s\-\(\)]+">
+                    <span class="field-error" id="phoneError">Please enter a valid phone number</span>
                     
-                    <label for="mce-MESSAGE">Message</label>
-                    <textarea id="mce-MESSAGE" name="MESSAGE" placeholder="Your message..."></textarea>
+                    <label for="subject">Subject <span class="required">*</span></label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="sales">Sales</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                    <span class="field-error" id="subjectError">Please select a subject</span>
+                    
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Your message..." required minlength="10"></textarea>
+                    <span class="field-error" id="messageError">Message must be at least 10 characters long</span>
+                    
+                    <button type="submit" id="submitButton">
+                        <span class="button-text">Submit</span>
+                        <span class="button-loader hidden">
+                            <span class="loader-dot"></span>
+                            <span class="loader-dot"></span>
+                            <span class="loader-dot"></span>
+                        </span>
+                    </button>
 
-                    <!-- Real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                        <input type="text" name="b_53279532fecb3696c2f343de6_26d9b78fbc" tabindex="-1" value="">
+                    <div id="formStatus" class="form-status hidden">
+                        <p class="success-message">
+                            <span class="success-icon">✓</span>
+                            Thanks for your message! We'll get back to you soon.
+                        </p>
+                        <p class="error-message">
+                            <span class="error-icon">!</span>
+                            Oops! There was a problem. Please try again.
+                        </p>
                     </div>
-                    
-                    <button type="submit" name="subscribe" id="mc-embedded-subscribe">Submit</button>
                 </form>
             </div>
         </div>
@@ -250,5 +270,108 @@
         </div>
     </footer>
     <script src="Juego/game.js"></script>
+    <script>
+        const form = document.querySelector('.contact-form');
+        const submitButton = document.getElementById('submitButton');
+        const formStatus = document.getElementById('formStatus');
+        const buttonText = submitButton.querySelector('.button-text');
+        const buttonLoader = submitButton.querySelector('.button-loader');
+        const inputs = form.querySelectorAll('input, textarea, select');
+
+        // Validación en tiempo real
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                validateField(input);
+            });
+
+            input.addEventListener('blur', () => {
+                validateField(input);
+            });
+        });
+
+        function validateField(input) {
+            const errorElement = document.getElementById(`${input.id}Error`);
+            
+            if (input.validity.valid) {
+                input.classList.remove('invalid');
+                input.classList.add('valid');
+                errorElement.style.display = 'none';
+            } else {
+                input.classList.remove('valid');
+                input.classList.add('invalid');
+                errorElement.style.display = 'block';
+                
+                // Mensajes de error específicos
+                if (input.validity.valueMissing) {
+                    errorElement.textContent = `${input.previousElementSibling.textContent.replace('*', '')} is required`;
+                } else if (input.validity.typeMismatch && input.type === 'email') {
+                    errorElement.textContent = 'Please enter a valid email address';
+                } else if (input.validity.patternMismatch && input.type === 'tel') {
+                    errorElement.textContent = 'Please enter a valid phone number';
+                } else if (input.validity.tooShort) {
+                    errorElement.textContent = `${input.previousElementSibling.textContent.replace('*', '')} must be at least ${input.minLength} characters`;
+                }
+            }
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validar todos los campos antes de enviar
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.validity.valid) {
+                    isValid = false;
+                    validateField(input);
+                }
+            });
+
+            if (!isValid) {
+                return;
+            }
+
+            // Mostrar estado de carga
+            submitButton.disabled = true;
+            buttonText.classList.add('hidden');
+            buttonLoader.classList.remove('hidden');
+            formStatus.classList.add('hidden');
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Éxito
+                    form.reset();
+                    inputs.forEach(input => {
+                        input.classList.remove('valid', 'invalid');
+                    });
+                    formStatus.classList.remove('hidden', 'error');
+                    formStatus.classList.add('success');
+                    
+                    // Scroll suave al mensaje de éxito
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            } catch (error) {
+                formStatus.classList.remove('hidden', 'success');
+                formStatus.classList.add('error');
+                
+                // Scroll suave al mensaje de error
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                // Restaurar botón
+                submitButton.disabled = false;
+                buttonLoader.classList.add('hidden');
+                buttonText.classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
