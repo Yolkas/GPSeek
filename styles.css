@@ -106,24 +106,40 @@ nav a:hover {
 
 /* 🎯 Botones en Hero */
 .hero .buttons {
+    margin-top: 2rem;
     display: flex;
+    gap: 1rem;
     justify-content: center;
-    gap: 10px;
 }
 
-.hero button {
-    background-color: var(--secondary-color);
-    color: var(--text-dark);
+.hero .buttons .button,
+.hero .buttons button {
+    padding: 12px 24px;
     border: none;
-    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #2c8a2c;
+    color: white;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.hero button:hover {
-    background-color: #8cbe82;
+.hero .buttons .button:hover,
+.hero .buttons button:hover {
+    background-color: #3aa03a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero .buttons .button:active,
+.hero .buttons button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* 🛠 Servicios */
