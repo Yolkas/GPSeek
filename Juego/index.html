@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div id="game-container">
+            <div id="game"></div>
+            <div id="menu" class="menu">
+                <h1>Snake Game</h1>
+                <button id="startButton">Start Game</button>
+                <p id="highScore">High Score: 0</p>
+            </div>
+            <div id="gameOver" class="menu hidden">
+                <h1>Game Over</h1>
+                <p id="finalScore">Score: 0</p>
+                <button id="restartButton">Play Again</button>
+            </div>
+        </div>
+        <div id="score-container">
+            <div id="currentScore">Score: 0</div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
