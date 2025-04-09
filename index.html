@@ -170,19 +170,19 @@
                 <p>"Your route, your time, your safety"</p>
             </div>
             <div class="contact-form-container">
-                <form class="contact-form" action="https://formspree.io/f/mwplakwk" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
                     <h3>GET IN TOUCH</h3>
 
                     <label for="name">Name <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" placeholder="Full Name" required minlength="2">
-                    <span class="field-error" id="nameError">Name must be at least 2 characters long</span>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    <span class="field-error" id="nameError">Please enter your name</span>
                     
                     <label for="email">Email <span class="required">*</span></label>
                     <input type="email" id="email" name="email" placeholder="Email@example.com" required>
                     <span class="field-error" id="emailError">Please enter a valid email address</span>
                     
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" pattern="[\d\s\-\(\)]+">
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" pattern="[0-9\s\(\)\-\+]+">
                     <span class="field-error" id="phoneError">Please enter a valid phone number</span>
                     
                     <label for="subject">Subject <span class="required">*</span></label>
@@ -192,12 +192,13 @@
                         <option value="support">Technical Support</option>
                         <option value="sales">Sales</option>
                         <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
                     </select>
                     <span class="field-error" id="subjectError">Please select a subject</span>
                     
                     <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" placeholder="Your message..." required minlength="10"></textarea>
-                    <span class="field-error" id="messageError">Message must be at least 10 characters long</span>
+                    <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                    <span class="field-error" id="messageError">Please enter your message</span>
                     
                     <button type="submit" id="submitButton">
                         <span class="button-text">Submit</span>
