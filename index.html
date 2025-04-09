@@ -246,5 +246,51 @@
         </div>
     </footer>
     <script src="Juego/game.js"></script>
+    <script>
+        // Manejo del formulario de contacto
+        const form = document.querySelector('.contact-form');
+        const submitButton = document.getElementById('submitButton');
+        const formStatus = document.getElementById('formStatus');
+        const buttonText = submitButton.querySelector('.button-text');
+        const buttonLoader = submitButton.querySelector('.button-loader');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Mostrar estado de carga
+            submitButton.disabled = true;
+            buttonText.classList.add('hidden');
+            buttonLoader.classList.remove('hidden');
+            formStatus.classList.add('hidden');
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Éxito
+                    form.reset();
+                    formStatus.classList.remove('hidden', 'error');
+                    formStatus.classList.add('success');
+                } else {
+                    // Error
+                    throw new Error('Network response was not ok.');
+                }
+            } catch (error) {
+                formStatus.classList.remove('hidden', 'success');
+                formStatus.classList.add('error');
+            } finally {
+                // Restaurar botón
+                submitButton.disabled = false;
+                buttonLoader.classList.add('hidden');
+                buttonText.classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

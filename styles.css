@@ -476,6 +476,86 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Estilos para el formulario */
+.form-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-status.hidden {
+    display: none;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    display: none;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    display: none;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.form-status.success .success-message {
+    display: block;
+}
+
+.form-status.error .error-message {
+    display: block;
+}
+
+.button-loader {
+    display: inline-block;
+}
+
+.button-loader.hidden,
+.button-text.hidden {
+    display: none;
+}
+
+/* Validación del formulario */
+.contact-form input:invalid,
+.contact-form textarea:invalid {
+    border-color: #dc3545;
+}
+
+.contact-form input:valid,
+.contact-form textarea:valid {
+    border-color: #28a745;
+}
+
+/* Estilo del botón durante el envío */
+.contact-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+.contact-form button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
