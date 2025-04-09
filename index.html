@@ -179,6 +179,9 @@
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Email@example.com" required>
                     
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                    
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" pattern="[\d\s\-\(\)]+">
                     
@@ -191,8 +194,8 @@
                     </button>
 
                     <div id="formStatus" class="form-status hidden">
-                        <p class="success-message">Thanks for your message! We'll get back to you soon.</p>
-                        <p class="error-message">Oops! There was a problem. Please try again.</p>
+                        <div class="success-message">Thanks for your message! We'll get back to you soon.</div>
+                        <div class="error-message">Oops! There was a problem. Please try again.</div>
                     </div>
                 </form>
             </div>

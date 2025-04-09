@@ -488,22 +488,24 @@ button:hover {
     display: none;
 }
 
+.success-message,
+.error-message {
+    display: none;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
 .success-message {
     color: #155724;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
-    display: none;
-    padding: 1rem;
-    border-radius: 5px;
 }
 
 .error-message {
     color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
-    display: none;
-    padding: 1rem;
-    border-radius: 5px;
 }
 
 .form-status.success .success-message {
@@ -545,6 +547,8 @@ button:hover {
     transition: background-color 0.3s;
     font-size: 1rem;
     font-weight: bold;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .contact-form button[type="submit"]:hover {
